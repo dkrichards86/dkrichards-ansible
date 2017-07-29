@@ -1,0 +1,8 @@
+---
+
+- name: Stop a running application
+  become: yes
+  become_method: sudo
+  service:
+    name: "{{ vault.app.upstart }}"
+    state: stopped

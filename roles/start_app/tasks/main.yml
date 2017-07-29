@@ -1,0 +1,8 @@
+---
+
+- name: Start the application
+  become: yes
+  become_method: sudo
+  service:
+    name: "{{ vault.app.upstart }}"
+    state: started

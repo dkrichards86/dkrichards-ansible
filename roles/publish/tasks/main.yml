@@ -1,0 +1,17 @@
+---
+
+- name: Clone a fresh copy of the repo
+  connection: local
+  become: false
+  git:
+    repo: "{{ repo.url }}"
+    version: "{{ repo.branch }}"
+    dest: "{{ local_temp }}"
+    accept_hostkey: yes
+    force: yes
+    update: yes
+
+- name: Copy the application files to the server
+  synchronize:
+    src: "{{ local_temp }}"
+    dest: "{{ vault.app.root_dir }}"

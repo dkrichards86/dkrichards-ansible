@@ -1,0 +1,8 @@
+---
+
+- name: Stop a running application
+  become: yes
+  become_method: sudo
+  service:
+    name: nginx
+    state: stopped

@@ -1,0 +1,6 @@
+project_name: portfolio
+local_temp: /tmp/portfolio/
+
+repo:
+  url: git@github.com:dkrichards86/dkrichards.com.git
+  branch: master
